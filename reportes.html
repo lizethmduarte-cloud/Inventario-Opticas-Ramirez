@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes – Ópticas Ramírez</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="menu-lateral" aria-label="Navegación principal">
+    <div class="logo-sidebar">
+      <img src="img/logo.png" alt="Logotipo Ópticas Ramírez" class="logo-img">
+    </div>
+    
+    <nav class="navegacion-principal">
+      <ul class="lista-navegacion">
+        <li><a href="index.html" class="enlace-nav">Inicio</a></li>
+        <li><a href="productos.html" class="enlace-nav">Productos</a></li>
+        <li><a href="inventario.html" class="enlace-nav">Inventario</a></li>
+        <li><a href="entradas.html" class="enlace-nav">Entradas</a></li>
+        <li><a href="salidas.html" class="enlace-nav">Salidas</a></li>
+        <li><a href="traslados.html" class="enlace-nav">Traslados</a></li>
+        <!-- Pestaña activa -->
+        <li><a href="reportes.html" class="enlace-nav activo" aria-current="page">Reportes</a></li>
+        <li><a href="usuarios.html" class="enlace-nav">Usuarios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTENEDOR DERECHO -->
+  <div class="contenido-derecha">
+    
+    <header class="encabezado-superior">
+      <div class="encabezado-izquierda">
+        <h1 class="nombre-sistema">Módulo de Reportes</h1>
+      </div>
+      <div class="encabezado-derecha">
+        <button type="button" class="btn-notificaciones" aria-label="Ver notificaciones">
+          <span class="icono-notificacion">🔔</span>
+          <span class="badge-notificacion">3</span>
+        </button>
+        <div class="perfil-usuario">
+          <span class="avatar-usuario">AR</span>
+          <div class="datos-usuario">
+            <span class="nombre-usuario">Ana Ramírez</span>
+            <span class="rol-usuario">Administradora</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      
+      <section class="bienvenida">
+        <h2>Historial y Estadísticas</h2>
+        <p>Genera reportes consolidados de los movimientos del inventario y exporta la información.</p>
+      </section>
+
+      <!-- PANEL DE FILTROS Y EXPORTACIÓN -->
+      <section class="seccion-filtros panel-reportes">
+        <div class="filtros-fechas">
+          <div class="grupo-filtro">
+            <label for="fecha-inicio">Desde:</label>
+            <input type="date" id="fecha-inicio">
+          </div>
+          <div class="grupo-filtro">
+            <label for="fecha-fin">Hasta:</label>
+            <input type="date" id="fecha-fin">
+          </div>
+          <button class="btn-filtrar">Filtrar</button>
+        </div>
+        
+        <div class="botones-exportar">
+          <button class="btn-exportar btn-excel">📊 Exportar Excel</button>
+          <button class="btn-exportar btn-pdf">📄 Exportar PDF</button>
+        </div>
+      </section>
+
+      <!-- TARJETAS DE TOTALES -->
+      <section class="tarjetas-resumen">
+        <article class="tarjeta tarjeta-entradas">
+          <h3 class="tarjeta-titulo">Total Entradas</h3>
+          <p class="tarjeta-valor" id="total-entradas">0</p>
+          <p class="tarjeta-detalle">Unidades ingresadas</p>
+        </article>
+
+        <article class="tarjeta tarjeta-salidas">
+          <h3 class="tarjeta-titulo">Total Salidas</h3>
+          <p class="tarjeta-valor" id="total-salidas">0</p>
+          <p class="tarjeta-detalle">Unidades retiradas</p>
+        </article>
+
+        <article class="tarjeta tarjeta-traslados">
+          <h3 class="tarjeta-titulo">Total Traslados</h3>
+          <p class="tarjeta-valor" id="total-traslados">0</p>
+          <p class="tarjeta-detalle">Unidades movidas</p>
+        </article>
+      </section>
+
+      <!-- TABLA CONSOLIDADA -->
+      <section class="movimientos-recientes">
+        <h2 class="titulo-seccion">Consolidado de Movimientos</h2>
+        <div class="tabla-scroll">
+          <table class="tabla-movimientos">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Producto</th>
+                <th>Detalle / Ruta</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-reportes-body">
+              <!-- El JavaScript llenará esto -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <p>&copy; 2026 Ópticas Ramírez · Sistema Web de Gestión de Inventarios</p>
+    </footer>
+  </div>
+</body>
+</html>

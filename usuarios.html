@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios – Ópticas Ramírez</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="menu-lateral" aria-label="Navegación principal">
+    <div class="logo-sidebar">
+      <img src="img/logo.png" alt="Logotipo Ópticas Ramírez" class="logo-img">
+    </div>
+    
+    <nav class="navegacion-principal">
+      <ul class="lista-navegacion">
+        <li><a href="index.html" class="enlace-nav">Inicio</a></li>
+        <li><a href="productos.html" class="enlace-nav">Productos</a></li>
+        <li><a href="inventario.html" class="enlace-nav">Inventario</a></li>
+        <li><a href="entradas.html" class="enlace-nav">Entradas</a></li>
+        <li><a href="salidas.html" class="enlace-nav">Salidas</a></li>
+        <li><a href="traslados.html" class="enlace-nav">Traslados</a></li>
+        <li><a href="reportes.html" class="enlace-nav">Reportes</a></li>
+        <!-- Pestaña activa -->
+        <li><a href="usuarios.html" class="enlace-nav activo" aria-current="page">Usuarios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTENEDOR DERECHO -->
+  <div class="contenido-derecha">
+    
+    <header class="encabezado-superior">
+      <div class="encabezado-izquierda">
+        <h1 class="nombre-sistema">Gestión de Usuarios</h1>
+      </div>
+      <div class="encabezado-derecha">
+        <button type="button" class="btn-notificaciones" aria-label="Ver notificaciones">
+          <span class="icono-notificacion">🔔</span>
+          <span class="badge-notificacion">3</span>
+        </button>
+        <div class="perfil-usuario">
+          <span class="avatar-usuario">AR</span>
+          <div class="datos-usuario">
+            <span class="nombre-usuario">Ana Ramírez</span>
+            <span class="rol-usuario">Administradora</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      
+      <section class="bienvenida">
+        <h2>Control de Accesos</h2>
+        <p>Administra el personal que tiene acceso al sistema y asigna sus roles correspondientes.</p>
+      </section>
+
+      <!-- FORMULARIO DE USUARIOS -->
+      <section class="seccion-formulario">
+        <h2 class="titulo-seccion">Registrar Nuevo Usuario</h2>
+        
+        <form id="form-usuario" class="form-producto">
+          
+          <div class="form-grid">
+            <div class="grupo-input">
+              <label for="nombre-usuario">Nombre Completo</label>
+              <input type="text" id="nombre-usuario" placeholder="Ej: Carlos Pérez" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="correo-usuario">Correo Electrónico</label>
+              <input type="email" id="correo-usuario" placeholder="Ej: carlos@opticasramirez.com" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="rol-usuario">Rol en el Sistema</label>
+              <select id="rol-usuario" required>
+                <option value="" disabled selected>Seleccione un rol</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Asesor">Asesor</option>
+              </select>
+            </div>
+
+            <div class="grupo-input">
+              <label for="password-usuario">Contraseña Temporal</label>
+              <input type="password" id="password-usuario" placeholder="••••••••" required>
+            </div>
+          </div>
+
+          <div class="form-acciones">
+            <button type="submit" class="btn-primario">Crear Usuario</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- TABLA DE USUARIOS -->
+      <section class="movimientos-recientes">
+        <h2 class="titulo-seccion">Personal Registrado</h2>
+        <div class="tabla-scroll">
+          <table class="tabla-movimientos">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-usuarios-body">
+              <!-- Usuario de prueba por defecto -->
+              <tr>
+                <td>Ana Ramírez</td>
+                <td>ana@opticasramirez.com</td>
+                <td><span class="badge-rol badge-admin">Administrador</span></td>
+                <td>
+                  <button class="btn-accion btn-editar">Editar</button>
+                  <button class="btn-accion btn-eliminar">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <p>&copy; 2026 Ópticas Ramírez · Sistema Web de Gestión de Inventarios</p>
+    </footer>
+  </div>
+</body>
+</html>

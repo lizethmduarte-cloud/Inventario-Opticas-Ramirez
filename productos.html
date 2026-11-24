@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos – Ópticas Ramírez</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="estilos.css">
+  
+  <script src="script.js" defer></script>
+</head>
+<body class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="menu-lateral" aria-label="Navegación principal">
+    <div class="logo-sidebar">
+      <img src="img/logo.png" alt="Logotipo Ópticas Ramírez" class="logo-img">
+    </div>
+    
+    <nav class="navegacion-principal">
+      <ul class="lista-navegacion">
+        <li><a href="index.html" class="enlace-nav">Inicio</a></li>
+        <li><a href="productos.html" class="enlace-nav activo" aria-current="page">Productos</a></li>
+        <li><a href="inventario.html" class="enlace-nav">Inventario</a></li>
+        <li><a href="entradas.html" class="enlace-nav">Entradas</a></li>
+        <li><a href="salidas.html" class="enlace-nav">Salidas</a></li>
+        <li><a href="traslados.html" class="enlace-nav">Traslados</a></li>
+        <li><a href="reportes.html" class="enlace-nav">Reportes</a></li>
+        <li><a href="usuarios.html" class="enlace-nav">Usuarios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTENEDOR DERECHO -->
+  <div class="contenido-derecha">
+    
+    <header class="encabezado-superior">
+      <div class="encabezado-izquierda">
+        <h1 class="nombre-sistema">Gestión de Productos</h1>
+      </div>
+
+      <div class="encabezado-derecha">
+        <button type="button" class="btn-notificaciones" aria-label="Ver notificaciones">
+          <span class="icono-notificacion">🔔</span>
+          <span class="badge-notificacion">3</span>
+        </button>
+
+        <div class="perfil-usuario">
+          <span class="avatar-usuario">AR</span>
+          <div class="datos-usuario">
+            <span class="nombre-usuario">Ana Ramírez</span>
+            <span class="rol-usuario">Administradora</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      
+      <section class="bienvenida">
+        <h2>Catálogo de Productos</h2>
+        <p>Registra nuevos ítems en el sistema y consulta el listado general del catálogo de Ópticas Ramírez.</p>
+      </section>
+
+      <!-- FORMULARIO (Fíjate que tiene el id="form-producto") -->
+      <section class="seccion-formulario">
+        <h2 class="titulo-seccion">Registrar nuevo producto</h2>
+        
+        <form id="form-producto" class="form-producto">
+          
+          <div class="form-grid">
+            <div class="grupo-input">
+              <label for="codigo">Código del producto</label>
+              <input type="text" id="codigo" placeholder="Ej: OPT-0001" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="nombre">Nombre del producto</label>
+              <input type="text" id="nombre" placeholder="Ej: Gafas Ray-Ban" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="categoria">Categoría</label>
+              <select id="categoria" required>
+                <option value="" disabled selected>Seleccione una categoría</option>
+                <option value="formuladas">Gafas formuladas</option>
+                <option value="sol">Gafas de sol</option>
+                <option value="lentes">Lentes de contacto</option>
+                <option value="monturas">Monturas</option>
+                <option value="accesorios">Accesorios</option>
+              </select>
+            </div>
+
+            <div class="grupo-input">
+              <label for="precio-compra">Precio de compra</label>
+              <input type="number" id="precio-compra" placeholder="Ej: 45000" min="0" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="precio-venta">Precio de venta</label>
+              <input type="number" id="precio-venta" placeholder="Ej: 78000" min="0" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="cantidad">Cantidad disponible</label>
+              <input type="number" id="cantidad" placeholder="Ej: 15" min="0" required>
+            </div>
+          </div>
+
+          <div class="form-acciones">
+            <button type="submit" class="btn-primario">Guardar producto</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- TABLA (Fíjate que el tbody tiene el id="tabla-productos-body") -->
+      <section class="movimientos-recientes">
+        <h2 class="titulo-seccion">Listado de productos registrados</h2>
+        <div class="tabla-scroll">
+          <table class="tabla-movimientos">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>P. Compra</th>
+                <th>P. Venta</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-productos-body">
+              <tr>
+                <td>OPT-0001</td>
+                <td>Gafas formuladas Ray-Ban</td>
+                <td>Gafas formuladas</td>
+                <td>$ 45.000</td>
+                <td>$ 78.000</td>
+                <td>15</td>
+                <td>
+                  <button class="btn-accion btn-editar">Editar</button>
+                  <button class="btn-accion btn-eliminar">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>OPT-0002</td>
+                <td>Lentes de contacto Acuvue</td>
+                <td>Lentes de contacto</td>
+                <td>$ 60.000</td>
+                <td>$ 95.000</td>
+                <td>8</td>
+                <td>
+                  <button class="btn-accion btn-editar">Editar</button>
+                  <button class="btn-accion btn-eliminar">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <p>&copy; 2026 Ópticas Ramírez · Sistema Web de Gestión de Inventarios</p>
+    </footer>
+  </div>
+</body>
+</html>

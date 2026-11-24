@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – Ópticas Ramírez</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="menu-lateral" aria-label="Navegación principal">
+    <div class="logo-sidebar">
+      <!-- AQUÍ ESTÁ TU LOGO -->
+      <img src="img/logo.png" alt="Logotipo Ópticas Ramírez" class="logo-img">
+    </div>
+    
+    <nav class="navegacion-principal">
+      <ul class="lista-navegacion">
+        <li><a href="index.html" class="enlace-nav activo" aria-current="page">Inicio</a></li>
+        <li><a href="productos.html" class="enlace-nav">Productos</a></li>
+        <li><a href="inventario.html" class="enlace-nav">Inventario</a></li>
+        <li><a href="entradas.html" class="enlace-nav">Entradas</a></li>
+        <li><a href="salidas.html" class="enlace-nav">Salidas</a></li>
+        <li><a href="traslados.html" class="enlace-nav">Traslados</a></li>
+        <li><a href="reportes.html" class="enlace-nav">Reportes</a></li>
+        <li><a href="usuarios.html" class="enlace-nav">Usuarios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTENEDOR DERECHO -->
+  <div class="contenido-derecha">
+    
+    <header class="encabezado-superior">
+      <div class="encabezado-izquierda">
+        <h1 class="nombre-sistema">Sistema Web de Gestión de Inventarios</h1>
+      </div>
+
+      <div class="encabezado-derecha">
+        <button type="button" class="btn-notificaciones" aria-label="Ver notificaciones">
+          <span class="icono-notificacion">🔔</span>
+          <span class="badge-notificacion">3</span>
+        </button>
+
+        <div class="perfil-usuario">
+          <span class="avatar-usuario">AR</span>
+          <div class="datos-usuario">
+            <span class="nombre-usuario">Ana Ramírez</span>
+            <span class="rol-usuario">Administradora</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      <section class="bienvenida">
+        <h2>Bienvenida, Ana 👋</h2>
+        <p>Este es el resumen general del inventario. Consulta el estado de tus productos, movimientos recientes y alertas del sistema.</p>
+      </section>
+
+      <section class="tarjetas-resumen">
+        <article class="tarjeta tarjeta-productos">
+          <h3 class="tarjeta-titulo">Productos totales</h3>
+          <p class="tarjeta-valor">1.248</p>
+          <p class="tarjeta-detalle">Ítems registrados</p>
+        </article>
+        <article class="tarjeta tarjeta-entradas">
+          <h3 class="tarjeta-titulo">Entradas</h3>
+          <p class="tarjeta-valor">86</p>
+          <p class="tarjeta-detalle">Este mes</p>
+        </article>
+        <article class="tarjeta tarjeta-salidas">
+          <h3 class="tarjeta-titulo">Salidas</h3>
+          <p class="tarjeta-valor">54</p>
+          <p class="tarjeta-detalle">Este mes</p>
+        </article>
+        <article class="tarjeta tarjeta-traslados">
+          <h3 class="tarjeta-titulo">Traslados</h3>
+          <p class="tarjeta-valor">12</p>
+          <p class="tarjeta-detalle">Este mes</p>
+        </article>
+        <article class="tarjeta tarjeta-alertas">
+          <h3 class="tarjeta-titulo">Alertas de stock</h3>
+          <p class="tarjeta-valor">7</p>
+          <p class="tarjeta-detalle">Existencias bajas</p>
+        </article>
+      </section>
+
+      <section class="movimientos-recientes">
+        <h2>Movimientos recientes</h2>
+        <div class="tabla-scroll">
+          <table class="tabla-movimientos">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Producto</th>
+                <th>Sede</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08/11/2026</td>
+                <td><span class="etiqueta tipo-entrada">Entrada</span></td>
+                <td>Gafas formuladas Ray-Ban</td>
+                <td>Sede Centro</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>08/11/2026</td>
+                <td><span class="etiqueta tipo-salida">Salida</span></td>
+                <td>Lentes de contacto Acuvue</td>
+                <td>Sede Norte</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>07/11/2026</td>
+                <td><span class="etiqueta tipo-traslado">Traslado</span></td>
+                <td>Monturas oftálmicas</td>
+                <td>Sede Sur</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td>07/11/2026</td>
+                <td><span class="etiqueta tipo-entrada">Entrada</span></td>
+                <td>Estuches rígidos</td>
+                <td>Sede Centro</td>
+                <td>40</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="resumen-categorias">
+        <h2>Inventario por categorías</h2>
+        <div class="lista-categorias">
+          <article class="categoria">
+            <h3 class="categoria-nombre">Gafas formuladas</h3>
+            <p class="categoria-cantidad">420 un.</p>
+            <p class="categoria-porcentaje">34% del total</p>
+          </article>
+          <article class="categoria">
+            <h3 class="categoria-nombre">Gafas de sol</h3>
+            <p class="categoria-cantidad">305 un.</p>
+            <p class="categoria-porcentaje">24% del total</p>
+          </article>
+          <article class="categoria">
+            <h3 class="categoria-nombre">Lentes de contacto</h3>
+            <p class="categoria-cantidad">218 un.</p>
+            <p class="categoria-porcentaje">18% del total</p>
+          </article>
+          <article class="categoria">
+            <h3 class="categoria-nombre">Monturas</h3>
+            <p class="categoria-cantidad">195 un.</p>
+            <p class="categoria-porcentaje">16% del total</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>&copy; 2026 Ópticas Ramírez · Sistema Web de Gestión de Inventarios</p>
+    </footer>
+  </div>
+</body>
+</html>

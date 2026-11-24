@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario – Ópticas Ramírez</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="menu-lateral" aria-label="Navegación principal">
+    <div class="logo-sidebar">
+      <img src="img/logo.png" alt="Logotipo Ópticas Ramírez" class="logo-img">
+    </div>
+    
+    <nav class="navegacion-principal">
+      <ul class="lista-navegacion">
+        <li><a href="index.html" class="enlace-nav">Inicio</a></li>
+        <li><a href="productos.html" class="enlace-nav">Productos</a></li>
+        <!-- Pestaña activa de inventario -->
+        <li><a href="inventario.html" class="enlace-nav activo" aria-current="page">Inventario</a></li>
+        <li><a href="entradas.html" class="enlace-nav">Entradas</a></li>
+        <li><a href="salidas.html" class="enlace-nav">Salidas</a></li>
+        <li><a href="traslados.html" class="enlace-nav">Traslados</a></li>
+        <li><a href="reportes.html" class="enlace-nav">Reportes</a></li>
+        <li><a href="usuarios.html" class="enlace-nav">Usuarios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTENEDOR DERECHO -->
+  <div class="contenido-derecha">
+    
+    <header class="encabezado-superior">
+      <div class="encabezado-izquierda">
+        <h1 class="nombre-sistema">Control de Inventario</h1>
+      </div>
+      <div class="encabezado-derecha">
+        <button type="button" class="btn-notificaciones" aria-label="Ver notificaciones">
+          <span class="icono-notificacion">🔔</span>
+          <span class="badge-notificacion">3</span>
+        </button>
+        <div class="perfil-usuario">
+          <span class="avatar-usuario">AR</span>
+          <div class="datos-usuario">
+            <span class="nombre-usuario">Ana Ramírez</span>
+            <span class="rol-usuario">Administradora</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      
+      <section class="bienvenida">
+        <h2>Inventario por Sedes</h2>
+        <p>Consulta el stock actual de los productos en cada una de las sucursales de Ópticas Ramírez.</p>
+      </section>
+
+      <!-- FILTROS -->
+      <section class="seccion-filtros">
+        <div class="grupo-filtro">
+          <label for="filtro-sede">Filtrar por Sede:</label>
+          <select id="filtro-sede">
+            <option value="todas">Todas las sedes</option>
+            <option value="Ventura">Ventura</option>
+            <option value="Séptima">Séptima</option>
+            <option value="Ensueño">Ensueño</option>
+            <option value="Jardín">Jardín</option>
+            <option value="Prado">Prado</option>
+            <option value="San Mateo">San Mateo</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- TABLA DE INVENTARIO -->
+      <section class="movimientos-recientes">
+        <h2 class="titulo-seccion">Stock Actual</h2>
+        <div class="tabla-scroll">
+          <table class="tabla-movimientos">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Sede</th>
+                <th>Stock Actual</th>
+                <th>Stock Mínimo</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <!-- El cuerpo se llenará con JavaScript -->
+            <tbody id="tabla-inventario-body">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <p>&copy; 2026 Ópticas Ramírez · Sistema Web de Gestión de Inventarios</p>
+    </footer>
+  </div>
+</body>
+</html>

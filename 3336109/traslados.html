@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traslados – Ópticas Ramírez</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="menu-lateral" aria-label="Navegación principal">
+    <div class="logo-sidebar">
+      <img src="img/logo.png" alt="Logotipo Ópticas Ramírez" class="logo-img">
+    </div>
+    
+    <nav class="navegacion-principal">
+      <ul class="lista-navegacion">
+        <li><a href="index.html" class="enlace-nav">Inicio</a></li>
+        <li><a href="productos.html" class="enlace-nav">Productos</a></li>
+        <li><a href="inventario.html" class="enlace-nav">Inventario</a></li>
+        <li><a href="entradas.html" class="enlace-nav">Entradas</a></li>
+        <li><a href="salidas.html" class="enlace-nav">Salidas</a></li>
+        <!-- Pestaña activa -->
+        <li><a href="traslados.html" class="enlace-nav activo" aria-current="page">Traslados</a></li>
+        <li><a href="reportes.html" class="enlace-nav">Reportes</a></li>
+        <li><a href="usuarios.html" class="enlace-nav">Usuarios</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTENEDOR DERECHO -->
+  <div class="contenido-derecha">
+    
+    <header class="encabezado-superior">
+      <div class="encabezado-izquierda">
+        <h1 class="nombre-sistema">Traslados entre Sedes</h1>
+      </div>
+      <div class="encabezado-derecha">
+        <button type="button" class="btn-notificaciones" aria-label="Ver notificaciones">
+          <span class="icono-notificacion">🔔</span>
+          <span class="badge-notificacion">3</span>
+        </button>
+        <div class="perfil-usuario">
+          <span class="avatar-usuario">AR</span>
+          <div class="datos-usuario">
+            <span class="nombre-usuario">Ana Ramírez</span>
+            <span class="rol-usuario">Administradora</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      
+      <section class="bienvenida">
+        <h2>Movimiento entre Sucursales</h2>
+        <p>Mueve productos de una sede a otra para balancear el inventario de la empresa.</p>
+      </section>
+
+      <!-- FORMULARIO DE TRASLADOS -->
+      <section class="seccion-formulario">
+        <h2 class="titulo-seccion">Nuevo Traslado</h2>
+        
+        <form id="form-traslado" class="form-producto">
+          
+          <div class="form-grid">
+            <div class="grupo-input">
+              <label for="fecha-traslado">Fecha de Traslado</label>
+              <input type="date" id="fecha-traslado" required>
+            </div>
+
+            <div class="grupo-input">
+              <label for="producto-traslado">Producto</label>
+              <select id="producto-traslado" required>
+                <option value="" disabled selected>Seleccione el producto</option>
+                <option value="Gafas formuladas Ray-Ban">Gafas formuladas Ray-Ban</option>
+                <option value="Lentes de contacto Acuvue">Lentes de contacto Acuvue</option>
+                <option value="Monturas Titanio">Monturas Titanio</option>
+                <option value="Gafas de Sol Polarizadas">Gafas de Sol Polarizadas</option>
+                <option value="Estuches Rígidos">Estuches Rígidos</option>
+              </select>
+            </div>
+
+            <div class="grupo-input">
+              <label for="sede-origen">Sede de Origen</label>
+              <select id="sede-origen" required>
+                <option value="" disabled selected>¿De dónde sale?</option>
+                <option value="Ventura">Ventura</option>
+                <option value="Séptima">Séptima</option>
+                <option value="Ensueño">Ensueño</option>
+                <option value="Jardín">Jardín</option>
+                <option value="Prado">Prado</option>
+                <option value="San Mateo">San Mateo</option>
+              </select>
+            </div>
+
+            <div class="grupo-input">
+              <label for="sede-destino">Sede de Destino</label>
+              <select id="sede-destino" required>
+                <option value="" disabled selected>¿A dónde llega?</option>
+                <option value="Ventura">Ventura</option>
+                <option value="Séptima">Séptima</option>
+                <option value="Ensueño">Ensueño</option>
+                <option value="Jardín">Jardín</option>
+                <option value="Prado">Prado</option>
+                <option value="San Mateo">San Mateo</option>
+              </select>
+            </div>
+
+            <div class="grupo-input">
+              <label for="cantidad-traslado">Cantidad a mover</label>
+              <input type="number" id="cantidad-traslado" placeholder="Ej: 10" min="1" required>
+            </div>
+          </div>
+
+          <div class="form-acciones">
+            <button type="submit" class="btn-primario">Registrar Traslado</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- TABLA DE TRASLADOS -->
+      <section class="movimientos-recientes">
+        <h2 class="titulo-seccion">Historial de Traslados</h2>
+        <div class="tabla-scroll">
+          <table class="tabla-movimientos">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Ruta (Origen → Destino)</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-traslados-body">
+              <!-- Aquí el JavaScript inyectará las filas -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+      <p>&copy; 2026 Ópticas Ramírez · Sistema Web de Gestión de Inventarios</p>
+    </footer>
+  </div>
+</body>
+</html>
